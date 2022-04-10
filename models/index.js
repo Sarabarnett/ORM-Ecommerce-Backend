@@ -17,12 +17,14 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   through: ProductTag,
+  as: 'tagIds',
   foreignKey: 'product_id'
 });
 
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
-  throught: ProductTag, 
+  through: ProductTag, 
+  as: 'tagIds',
   foreignKey: 'tag_id'
 });
 
